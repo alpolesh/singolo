@@ -21,6 +21,7 @@ body {
   font-size: 25px;
   font-weight: bold;
   color: #ffffff;
+  letter-spacing: -0.5px;
 }
 .logo__star{
   color: #f06c64;
@@ -30,9 +31,12 @@ body {
   color: #ffffff;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 371px;
+  padding-top: 10px;
 }
 .navigation__button{
-  padding-left: 30px;
+
 }
 .navigation__button_colored{
   color: #bc5c59;
@@ -47,4 +51,34 @@ body {
   right: -15px;
   color: #494e62;
 }
-
+.slider{
+  position: relative;
+  height: 600px;
+  background-color: #f06c64;
+  border-bottom: 15px solid #ea676b;;
+}
+.slider__left-arrow{
+  position: absolute;
+  left: 40px;
+  top: 281px;
+}
+.slider__right-arrow{
+  position: absolute;
+  right: 40px;
+  top: 281px;
+}
+.slider__left-arrow:hover,
+.slider__right-arrow:hover{
+  transform: scale(1.5);
+  transition-duration: 100ms;
+}
+.slider__iphone-vertical{
+  position: absolute;
+  left: 112px;
+  top: 53px;
+}
+.slider__iphone-horizontal{
+  position: absolute;
+  right: 111px;
+  top: 174px;
+}
