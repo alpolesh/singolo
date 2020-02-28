@@ -79,3 +79,67 @@ body {
   transform: scale(1.05);
   transition-duration: 200ms;
 }
+.about-us{
+  height: 728px;
+  background-color: #f2f2f2;
+}
+.about-us__title{
+  font-size: 30px;
+  color: #666d89;
+  font-weight: 900;
+  text-align: left;
+  padding-top: 62px;
+}
+.about-us__description{
+  font-size: 18px;
+  line-height: 30px;
+  color: #767e9e;
+  font-weight: 300;
+  text-align: justify;
+  padding-top: 17px;
+  letter-spacing: -0.5px;
+}
+.layout-3-column{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 43px;
+}
+
+.text__title{
+  font-size: 18px;
+  color: #666d89;
+  font-weight: 900;
+  text-align: left;
+  padding-top: 12px;
+}
+.text__description{
+  font-size: 12px;
+  line-height: 21px;
+  color: #767e9e;
+  font-weight: 400;
+  text-align: left;
+  padding-top: 7px;
+}
+.icons{
+  margin-top: 24px;
+  display: flex;
+
+}
+.icons__icon{
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #666d89;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ico_facebook{
+  background-image: url("./assets/img/facebook.svg");
+  width: 8px;
+  height: 8px;
+
+}
+
+
