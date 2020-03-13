@@ -52,11 +52,16 @@ body {
   padding-top: 11px;
 }
 
-.navigation__button_colored{
+.navigation__link{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.navigation__link_active{
   color: #bc5c59;
 }
 
-.navigation__button:hover{
+.navigation__link:not(.navigation__link_active):hover{
   color: #dadb7d;
   cursor: pointer;
 }
