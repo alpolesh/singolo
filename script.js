@@ -65,7 +65,34 @@ horizontalIphoneButton.addEventListener('click', (event) => {
 blackScreenHorizontal.classList.toggle('screen-on');
 })
 
+//Portfolio. Switching tabs
 
+let portfolioImages = document.querySelectorAll('.layout-4-column__img');
+const tags = document.querySelector('.portfolio__tags');
 
+tags.addEventListener('click', (event) => {
+  if(event.target.tagName === "SPAN"){
+    tags.querySelectorAll('.tags__tag').forEach(item => item.classList.remove('tag_active'));
+    event.target.classList.add('tag_active');
+    getRandomImg(portfolioImages);
+  }
+  return;
+});
+
+function getRandomImg(n) {
+  for (let i = 0; i < n.length; i++){
+    n[i].style.order = Math.floor(Math.random() * Math.floor(n.length));
+  }
+}
+
+//Portfolio. Image selection
+
+document.querySelector('.layout-4-column').addEventListener('click', (event) => {
+  if (event.target.className === "layout-4-column__img"){
+    document.querySelectorAll('.layout-4-column__img').forEach(item => item.classList.remove('layout-4-column__img_active'));
+    event.target.classList.add('layout-4-column__img_active');
+  }
+  return;
+});
 
 

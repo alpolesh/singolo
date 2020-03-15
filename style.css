@@ -292,6 +292,7 @@ body {
   justify-content: start;
   margin-top: 13px;
 }
+
 .tags__tag{
   font-size: 12px;
   color: #767e9e;
@@ -303,8 +304,12 @@ body {
   margin-left: 10px;
   letter-spacing: -0.2px;
 }
+
 .tags__tag:first-child{
   margin-left: 0;
+}
+
+.tag_active{
   color: #dedede;
   border-color: #dedede;
 }
@@ -319,16 +324,19 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.layout-4-column img{
-  padding-bottom: 15px;
+.layout-4-column__img{
+  margin-bottom: 15px;
+  cursor: pointer;
 }
-.layout-4-column a:nth-child(n+13){
+.layout-4-column .layout-4-column__img:nth-child(n+13){
   display: none;
 }
-.layout-4-column img:hover{
-  transform: scale(1.05);
-  transition-duration: 200ms;
+
+.layout-4-column__img_active{
+  outline: solid 5px #F06C64;
+  outline-offset: -5px;
 }
+
 .about-us{
   box-sizing: border-box;
   height: 734px;
