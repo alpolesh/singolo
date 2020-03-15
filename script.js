@@ -1,10 +1,13 @@
 //Navigation
+
 const navigationHeader = document.getElementById('navigationHeader');
 navigationHeader.addEventListener('click', (event) => {
   navigationHeader.querySelectorAll('a').forEach(item => item.classList.remove('navigation__link_active'));
   event.target.classList.add('navigation__link_active');
 });
+
 //Slider
+
 const left_arrow = document.querySelector(".slider__left-arrow");
 const right_arrow = document.querySelector(".slider__right-arrow");
 let slides = document.getElementsByClassName("slider__slides");
@@ -22,7 +25,9 @@ right_arrow.addEventListener('click', (e) => {
 });
 
 function plusSlides(n) {
-    showSlides(slideIndex += n);
+  showSlides(slideIndex += n);
+  blackScreenHorizontal.classList.remove('screen-on');
+  blackScreenVertical.classList.remove('screen-on');
 }
 
 function showSlides(n) {
@@ -43,3 +48,24 @@ function showSlides(n) {
       slider.classList.remove('blue');
     }
 }
+
+//Iphone's screen
+
+let verticalIphoneButton = document.querySelector('.iphone-vertical__button');
+let blackScreenVertical = document.querySelector('.slider__black-screen-vertical');
+
+verticalIphoneButton.addEventListener('click', (event) => {
+blackScreenVertical.classList.toggle('screen-on');
+});
+
+let horizontalIphoneButton = document.querySelector('.iphone-horizontal__button');
+let blackScreenHorizontal = document.querySelector('.slider__black-screen-horizontal');
+
+horizontalIphoneButton.addEventListener('click', (event) => {
+blackScreenHorizontal.classList.toggle('screen-on');
+})
+
+
+
+
+
