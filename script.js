@@ -95,4 +95,27 @@ document.querySelector('.layout-4-column').addEventListener('click', (event) => 
   return;
 });
 
+// Form submitting
+
+document.querySelector('.form__submit').addEventListener('click', (event) => {
+  event.preventDefault();
+  let subject = document.querySelector('.subject').value;
+  subject = subject === '' ? "Без темы" : "Тема: " + subject;
+  document.querySelector('.modal__subject').innerHTML = '';
+  document.querySelector('.modal__subject').innerHTML = subject;
+  let description = document.querySelector('.form__textarea').value;
+  description = description === '' ? "Без описания" : "Описание: " + description;
+  document.querySelector('.modal__description').innerHTML = '';
+  document.querySelector('.modal__description').innerHTML = description;
+  document.querySelector('.quote__modal').style.display = "";
+})
+
+document.querySelector('.modal__footer button').addEventListener('click', (event) => {
+  subject = '';
+  description = '';
+  document.querySelector('.subject').innerHTML = '';
+  document.querySelector('.form__textarea').innerHTML = '';
+  document.querySelector('.quote__modal').style.display = "none";
+})
+
 

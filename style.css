@@ -503,6 +503,53 @@ body {
   border-radius: 5px;
   width: 60px;
 }
+
+.quote__modal{
+}
+
+.modal__overlay{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+}
+
+.modal__window{
+  width: 300px;
+  max-height: 300px;
+  margin: auto auto;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.modal__header, .modal__body{
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal__description{
+  white-space: pre-wrap;
+}
+
+.modal__sending{
+  text-align: center;
+}
+
+.modal__footer{
+  display: flex;
+}
+
+.modal__footer button{
+  margin: 10px auto;
+  width: 30px;
+}
+
 .contact__title{
   font-size: 18px;
   color: #f0d8d9;
