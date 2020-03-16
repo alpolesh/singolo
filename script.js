@@ -2,8 +2,12 @@
 
 const navigationHeader = document.getElementById('navigationHeader');
 navigationHeader.addEventListener('click', (event) => {
-  navigationHeader.querySelectorAll('a').forEach(item => item.classList.remove('navigation__link_active'));
-  event.target.classList.add('navigation__link_active');
+  console.log(event.target.className);
+  if (event.target.className === 'navigation__link'){
+    navigationHeader.querySelectorAll('a').forEach(item => item.classList.remove('navigation__link_active'));
+    event.target.classList.add('navigation__link_active');
+  }
+  return;
 });
 
 //Slider
@@ -97,24 +101,28 @@ document.querySelector('.layout-4-column').addEventListener('click', (event) => 
 
 // Form submitting
 
-document.querySelector('.form__submit').addEventListener('click', (event) => {
+document.querySelector('.form').addEventListener('submit', (event) => {
   event.preventDefault();
   let subject = document.querySelector('.subject').value;
   subject = subject === '' ? "Без темы" : "Тема: " + subject;
-  document.querySelector('.modal__subject').innerHTML = '';
-  document.querySelector('.modal__subject').innerHTML = subject;
-  let description = document.querySelector('.form__textarea').value;
-  description = description === '' ? "Без описания" : "Описание: " + description;
-  document.querySelector('.modal__description').innerHTML = '';
-  document.querySelector('.modal__description').innerHTML = description;
-  document.querySelector('.quote__modal').style.display = "";
+  if (document.querySelector('.name').checkValidity() && document.querySelector('.email').checkValidity()){
+    document.querySelector('.modal__subject').innerHTML = '';
+    document.querySelector('.modal__subject').innerHTML = subject;
+    let description = document.querySelector('.form__textarea').value;
+    description = description === '' ? "Без описания" : "Описание: " + description;
+    document.querySelector('.modal__description').innerHTML = '';
+    document.querySelector('.modal__description').innerHTML = description;
+    document.querySelector('.quote__modal').style.display = "";
+  }
 })
 
 document.querySelector('.modal__footer button').addEventListener('click', (event) => {
   subject = '';
   description = '';
-  document.querySelector('.subject').innerHTML = '';
-  document.querySelector('.form__textarea').innerHTML = '';
+  document.querySelector('.subject').value = '';
+  document.querySelector('.form__textarea').value = '';
+  document.querySelector('.name').value = '';
+  document.querySelector('.email').value = '';
   document.querySelector('.quote__modal').style.display = "none";
 })
 

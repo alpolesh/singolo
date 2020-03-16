@@ -519,7 +519,7 @@ body {
 
 .modal__window{
   width: 300px;
-  max-height: 300px;
+
   margin: auto auto;
   background-color: white;
   border-radius: 10px;
@@ -531,13 +531,17 @@ body {
   font-weight: normal;
   padding: 5px 10px;
   border-bottom: 1px solid #eee;
+  overflow: hidden;
+  word-wrap: break-word;
+  max-height: 150px;
 }
 
 .modal__description{
-  white-space: pre-wrap;
+  overflow: hidden;
 }
 
 .modal__sending{
+  overflow: hidden;
   text-align: center;
 }
 
