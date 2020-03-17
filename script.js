@@ -1,5 +1,26 @@
 //Navigation
 
+document.addEventListener('scroll', onScroll);
+
+function onScroll(event) {
+  const curPos = window.scrollY;
+  const divs = document.querySelectorAll('section > a');
+  const links = document.querySelectorAll('#navigationHeader a');
+
+  divs.forEach((el) => {
+
+    if (el.offsetTop <= curPos && (el.offsetTop + el.parentElement.offsetHeight) > curPos){
+      links.forEach((a) => {
+        a.classList.remove('navigation__link_active');
+        if (el.getAttribute('id') === a.getAttribute('href').substring(1)){
+          a.classList.add('navigation__link_active');
+        }
+      });
+    }
+  });
+}
+
+/*
 const navigationHeader = document.getElementById('navigationHeader');
 navigationHeader.addEventListener('click', (event) => {
   console.log(event.target.className);
@@ -9,6 +30,7 @@ navigationHeader.addEventListener('click', (event) => {
   }
   return;
 });
+*/
 
 //Slider
 
