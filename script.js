@@ -15,22 +15,14 @@ function onScroll(event) {
         if (el.getAttribute('id') === a.getAttribute('href').substring(1)){
           a.classList.add('navigation__link_active');
         }
+        if (curPos >= document.body.scrollHeight - window.innerHeight){
+          a.classList.remove('navigation__link_active');
+          document.querySelector('.navigation__contact').classList.add('navigation__link_active');
+        }
       });
     }
   });
 }
-
-/*
-const navigationHeader = document.getElementById('navigationHeader');
-navigationHeader.addEventListener('click', (event) => {
-  console.log(event.target.className);
-  if (event.target.className === 'navigation__link'){
-    navigationHeader.querySelectorAll('a').forEach(item => item.classList.remove('navigation__link_active'));
-    event.target.classList.add('navigation__link_active');
-  }
-  return;
-});
-*/
 
 //Slider
 
