@@ -26,10 +26,60 @@ function onScroll(event) {
 
 //Slider
 
+let items = document.querySelectorAll('.slider__slides');
+let currentItem = 0;
+let isEnabled = true;
+
+function changeCurrentItem(n){
+  currentItem = (n + items.length) % items.length;
+}
+
+function hideItem(direction){
+  isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener('animationend', function(){
+    this.classList.remove('active', direction);
+  })
+}
+
+function showItem(direction){
+  items[currentItem].classList.add('next', direction);
+  items[currentItem].addEventListener('animationend', function(){
+    this.classList.remove('next', direction);
+    this.classList.add('active');
+    isEnabled = true;
+  })
+}
+
+function previousItem(n){
+  hideItem('to-left');
+  changeCurrentItem(n-1);
+  showItem('from-right');
+}
+
+function nextItem(n){
+  hideItem('to-right');
+  changeCurrentItem(n+1);
+  showItem('from-left');
+}
+
+document.querySelector('.slider__left-arrow').addEventListener('click', function() {
+  if (isEnabled) {
+    previousItem(currentItem);
+  }
+});
+
+document.querySelector('.slider__right-arrow').addEventListener('click', function() {
+  if (isEnabled) {
+    nextItem(currentItem);
+  }
+});
+
+/*
 const left_arrow = document.querySelector(".slider__left-arrow");
 const right_arrow = document.querySelector(".slider__right-arrow");
-let slides = document.getElementsByClassName("slider__slides");
-let slider = document.querySelector(".slider");
+const slides = document.getElementsByClassName("slider__slides");
+const slider = document.querySelector(".slider");
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -66,6 +116,7 @@ function showSlides(n) {
       slider.classList.remove('blue');
     }
 }
+*/
 
 //Iphone's screen
 
@@ -92,12 +143,12 @@ tags.addEventListener('click', (event) => {
   if(event.target.tagName === "SPAN"){
     tags.querySelectorAll('.tags__tag').forEach(item => item.classList.remove('tag_active'));
     event.target.classList.add('tag_active');
-    getRandomImg();
+    changeImg();
   }
   return;
 });
 
-function getRandomImg(){
+function changeImg(){
   let images = [...document.querySelectorAll('.layout-4-column__img')];
   let imagesContainer = document.querySelector('.layout-4-column');
   let fragment = document.createDocumentFragment();
