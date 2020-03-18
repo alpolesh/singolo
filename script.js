@@ -92,15 +92,21 @@ tags.addEventListener('click', (event) => {
   if(event.target.tagName === "SPAN"){
     tags.querySelectorAll('.tags__tag').forEach(item => item.classList.remove('tag_active'));
     event.target.classList.add('tag_active');
-    getRandomImg(portfolioImages);
+    getRandomImg();
   }
   return;
 });
 
-function getRandomImg(n) {
-  for (let i = 0; i < n.length; i++){
-    n[i].style.order = Math.floor(Math.random() * Math.floor(n.length));
+function getRandomImg(){
+  let images = [...document.querySelectorAll('.layout-4-column__img')];
+  let imagesContainer = document.querySelector('.layout-4-column');
+  let fragment = document.createDocumentFragment();
+
+  while (images.length){
+    let img = images.splice(Math.floor(Math.random() * images.length), 1)[0];
+    fragment.append(img);
   }
+  imagesContainer.append(fragment);
 }
 
 //Portfolio. Image selection
