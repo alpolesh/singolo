@@ -26,7 +26,8 @@ function onScroll(event) {
 
 //Slider
 
-let items = document.querySelectorAll('.slider__slides');
+const items = document.querySelectorAll('.slider__slides');
+const slider = document.querySelector(".slider");
 let currentItem = 0;
 let isEnabled = true;
 
@@ -48,6 +49,15 @@ function showItem(direction){
     this.classList.remove('next', direction);
     this.classList.add('active');
     isEnabled = true;
+    console.log(currentItem);
+    if (currentItem == 1){
+      slider.classList.remove('red');
+      slider.classList.add('blue');
+    }
+    else {
+      slider.classList.remove('blue');
+      slider.classList.add('red');
+    }
   })
 }
 

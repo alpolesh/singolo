@@ -97,6 +97,13 @@ body {
 .blue{
   background-color: #648BF0;
   border-bottom: 6px solid #648BA1;
+  transition: background-color, 0.5s;
+}
+
+.red{
+  background-color: #f06c64;;
+  border-bottom: 6px solid #ea676b;
+  transition: background-color, 0.5s;
 }
 
 .wrapper-slider{
@@ -594,9 +601,19 @@ body {
   resize: none;
 }
 .form__submit{
-  border: 1px solid;
-  border-radius: 5px;
-  width: 60px;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #f0d8d9;
+  border: none;
+}
+
+.form__submit:hover{
+  cursor: pointer;
+  background-color: #d6564f;
 }
 
 .quote__modal{
