@@ -24,23 +24,21 @@
     </header>
     <section class="slider">
       <a id="slider"></a>
-      <div class="wrapper-slider">
         <div class="slider__container">
           <div class="slider__left-arrow control">
             <img src="./assets/img/chev-left.png" alt="arrow-left">
           </div>
-
-          <div class="slider__slides first active">
-            <div class="slider__black-screen-vertical"></div>
-            <div class="slider__black-screen-horizontal"></div>
-            <div class="slider__iphone-vertical iphone-vertical">
-              <div class="iphone-vertical__button"></div>
-              <img src="./assets/img/iPhone_vertical.png" alt="iphone-vertical">
-            </div>
-            <div class="slider__iphone-horizontal iphone-horizontal">
-              <div class="iphone-horizontal__button"></div>
-              <img src="./assets/img/iPhone_horizontal.png" alt="iphone-horizontal">
-            </div>
+          <div class="slider__slides active">
+              <div class="slider__iphone-vertical iphone-vertical">
+                <div class="slider__black-screen-vertical"></div>
+                <div class="iphone-vertical__button"></div>
+                <img src="./assets/img/iPhone_vertical.png" alt="iphone-vertical">
+              </div>
+              <div class="slider__iphone-horizontal iphone-horizontal">
+                <div class="slider__black-screen-horizontal"></div>
+                <div class="iphone-horizontal__button"></div>
+                <img src="./assets/img/iPhone_horizontal.png" alt="iphone-horizontal">
+              </div>
           </div>
           <div class="slider__slides second">
             <div class="slider__second-slide">
@@ -51,7 +49,6 @@
             <img src="./assets/img/chev-right.png" alt="arrow-right">
           </div>
         </div>
-      </div>
     </section>
     <section class="services">
       <a id="services"></a>
@@ -227,13 +224,13 @@
       <h2 class="quote__title">Get a Quote</h2>
       <p class="quote__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       <div class="quote__form-container form-container">
-        <form action="#" class="form" method="post">
-          <input class="form__input name" type="text" name="name" placeholder="Name (Required)" pattern="[A-Za-zА-яа-я-\s']{1,30}" required>
-          <input class="form__input email" type="email" name="email" placeholder="Email (Required)" pattern="\w+@\w+\.[a-z]{2,}" required>
-          <input class="form__input subject" type="text" name="subject" placeholder="Subject">
-          <textarea class="form__input form__textarea" name="describe" placeholder="Describe your project in detail..."></textarea>
-          <button class="form__submit" type="submit">Submit</button>
-        </form>
+          <form action="#" class="form" method="post">
+            <input class="form__input name" type="text" name="name" placeholder="Name (Required)" pattern="[A-Za-zА-яа-я-\s']{1,30}" required>
+            <input class="form__input email" type="email" name="email" placeholder="Email (Required)" pattern="\w+@\w+\.[a-z]{2,}" required>
+            <input class="form__input subject" type="text" name="subject" placeholder="Subject">
+            <textarea class="form__input form__textarea" name="describe" placeholder="Describe your project in detail..."></textarea>
+            <button class="form__submit" type="submit">Submit</button>
+          </form>
         <div class="form-container__contact contact">
           <h3 class="contact__title">Contact Information</h3>
           <p class="contact__description">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. </p>
