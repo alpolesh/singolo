@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: Lato, sans-serif;
+  min-width: 1020px;
 }
 
 .wrapper{
@@ -22,8 +23,8 @@ body {
 }
 
 .header{
-  position: fixed;
   width: 100%;
+  position: fixed;
   box-sizing: border-box;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
