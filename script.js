@@ -5,11 +5,11 @@ document.addEventListener('scroll', onScroll);
 function onScroll(event) {
   const curPos = window.scrollY;
   const divs = document.querySelectorAll('section > a');
-  const links = document.querySelectorAll('#navigationHeader a');
+  const links = document.querySelectorAll('.header__navigation a');
 
   divs.forEach((el) => {
 
-    if (el.offsetTop <= curPos && (el.offsetTop + el.parentElement.offsetHeight) > curPos){
+    if (el.offsetTop <= curPos+1 && (el.offsetTop + el.parentElement.offsetHeight) > curPos){
       links.forEach((a) => {
         a.classList.remove('navigation__link_active');
         if (el.getAttribute('id') === a.getAttribute('href').substring(1)){
@@ -23,6 +23,21 @@ function onScroll(event) {
     }
   });
 }
+
+//Navigation-mobile
+
+const HEADER_BURGER = document.querySelector('.header__burger');
+const HEADER_CONTAINER = document.querySelector('.header__container');
+const HEADER_NAVIGATION = document.querySelector('.header__navigation');
+const BURGER_CONTAINER = document.querySelector('.burger__container');
+const BURGER_LINE = document.querySelector('.header__line');
+
+HEADER_BURGER.addEventListener('click', (event) => {
+  HEADER_CONTAINER.classList.toggle('header__container_active');
+  HEADER_NAVIGATION.classList.toggle('header__navigation_active');
+  BURGER_LINE.classList.toggle('active');
+  BURGER_CONTAINER.classList.toggle('active');
+})
 
 //Slider
 
