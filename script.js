@@ -39,6 +39,16 @@ HEADER_BURGER.addEventListener('click', (event) => {
   BURGER_CONTAINER.classList.toggle('active');
 })
 
+HEADER_NAVIGATION.addEventListener('click', (event) => {
+  console.log(event.target.className);
+  if (event.target.classList.contains("navigation__link")){
+    HEADER_CONTAINER.classList.remove('header__container_active');
+    HEADER_NAVIGATION.classList.remove('header__navigation_active');
+    BURGER_LINE.classList.remove('active');
+    BURGER_CONTAINER.classList.remove('active');
+  }
+})
+
 //Slider
 
 const items = document.querySelectorAll('.slider__slides');

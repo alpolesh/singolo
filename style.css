@@ -119,6 +119,16 @@ body {
     margin-left: -20px;
     padding-left: 71px;
     align-items: flex-start;
+    animation-duration: 0.3s;
+    animation-name: container;
+  }
+  @keyframes container {
+    from {
+      height: 0;
+    }
+    to {
+      height: 100vh;
+    }
   }
 }
 
@@ -176,9 +186,11 @@ body {
   color: #bc5c59;
 }
 
-.navigation__link:not(.navigation__link_active):hover{
-  color: #dadb7d;
-  cursor: pointer;
+@media (hover: hover){
+  .navigation__link:not(.navigation__link_active):hover{
+    color: #dadb7d;
+    cursor: pointer;
+  }
 }
 
 .navigation__button:not(:last-child):after{
@@ -282,11 +294,13 @@ body {
   }
 }
 
-.slider__left-arrow:hover,
-.slider__right-arrow:hover{
+@media (hover: hover){
+  .slider__left-arrow:hover,
+  .slider__right-arrow:hover{
   transform: scale(1.5);
   transition-duration: 100ms;
   cursor: pointer;
+}
 }
 
 /*
@@ -668,11 +682,15 @@ body {
   color: #dedede;
   border-color: #dedede;
 }
-.tags__tag:hover{
-  color: red;
-  border-color: red;
-  cursor: pointer;
+
+@media (hover: hover){
+  .tags__tag:hover{
+    color: red;
+    border-color: red;
+    cursor: pointer;
+  }
 }
+
 .layout-4-column{
   margin-top: 18.5px;
   margin-bottom: 40px;
