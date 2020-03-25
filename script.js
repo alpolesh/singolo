@@ -3,13 +3,18 @@
 document.addEventListener('scroll', onScroll);
 
 function onScroll(event) {
-  const curPos = window.scrollY;
-  const divs = document.querySelectorAll('section > a');
+  let curPos = window.scrollY;
+  const divs = document.querySelectorAll('section');
   const links = document.querySelectorAll('.header__navigation a');
-
+  if (document.documentElement.clientWidth < 768){
+    curPos = curPos + 77;
+  }
+  else {
+    curPos = curPos + 95;
+  }
+  console.log(curPos);
   divs.forEach((el) => {
-
-    if (el.offsetTop <= curPos+1 && (el.offsetTop + el.parentElement.offsetHeight) > curPos){
+    if (el.offsetTop <= curPos && (el.offsetTop + el.parentElement.offsetHeight) > curPos){
       links.forEach((a) => {
         a.classList.remove('navigation__link_active');
         if (el.getAttribute('id') === a.getAttribute('href').substring(1)){
@@ -40,7 +45,6 @@ HEADER_BURGER.addEventListener('click', (event) => {
 })
 
 HEADER_NAVIGATION.addEventListener('click', (event) => {
-  console.log(event.target.className);
   if (event.target.classList.contains("navigation__link")){
     HEADER_CONTAINER.classList.remove('header__container_active');
     HEADER_NAVIGATION.classList.remove('header__navigation_active');
