@@ -326,7 +326,7 @@ body {
 .slider__black-screen-vertical{
   display: none;
   position: absolute;
-  width: 18.627%;
+  width: 18.5%;
   height: 56.6627%;
   background-color: black;
   border-radius: 4px;
@@ -457,7 +457,6 @@ body {
 @media (max-width: 1019px){
   .services{
     height: 100%;
-    scroll-margin-top: 76px;
   }
   .wrapper-services{
     max-width: 1020px;
@@ -468,6 +467,9 @@ body {
   .wrapper-services{
     padding-left: 32px;
     padding-right: 29px;
+  }
+  .services{
+    scroll-margin-top: 76px;
   }
 }
 
@@ -513,6 +515,12 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 45px;
+}
+
+@media (min-width: 1019px){
+  .services__container-3x2{
+    margin-bottom: 20px;
+  }
 }
 
 @media (max-width: 1019px){

@@ -12,7 +12,6 @@ function onScroll(event) {
   else {
     curPos = curPos + 95;
   }
-  console.log(curPos);
   divs.forEach((el) => {
     if (el.offsetTop <= curPos && (el.offsetTop + el.parentElement.offsetHeight) > curPos){
       links.forEach((a) => {
@@ -91,15 +90,15 @@ function showItem(direction){
 }
 
 function previousItem(n){
-  hideItem('to-left');
+  hideItem('to-right');
   changeCurrentItem(n-1);
-  showItem('from-right');
+  showItem('from-left');
 }
 
 function nextItem(n){
-  hideItem('to-right');
+  hideItem('to-left');
   changeCurrentItem(n+1);
-  showItem('from-left');
+  showItem('from-right');
 }
 
 document.querySelector('.slider__left-arrow').addEventListener('click', function() {
